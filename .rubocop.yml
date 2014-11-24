@@ -1,0 +1,14 @@
+inherit_from: rubocop-todo.yml
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - Gemfile
+    - unparser-cli_wrapper.gemspec
+    - bin/**
+    - lib/**/*.rake
+  Exclude:
+    - pkg/**
+    - repos/**
+    - vendor/**
+StringLiterals:
+  EnforcedStyle: single_quotes
