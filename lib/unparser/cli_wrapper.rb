@@ -1,4 +1,4 @@
-require "unparser/cli_wrapper/version"
+require 'unparser/cli_wrapper/version'
 
 module Unparser
   module CliWrapper
