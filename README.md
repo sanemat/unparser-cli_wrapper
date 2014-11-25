@@ -1,12 +1,12 @@
 # Unparser::CliWrapper
 
-Unparser::CliWrapper provides `ruby-unparse-wrapped` command.
+Unparser::CliWrapper provides `ruby-unparse-utility-wrapped` command.
 `Unparser` gem provides `unparser`, but this don't accept _STDIN_.
 
 This gem replaces '-' with _STDIN_ like unix option, the example below:
 
 ```
-$ cat Gemfile | ruby-unparse-wrapped - -v
+$ cat Gemfile | ruby-unparse-utility-wrapped - -v
 Original-Source:
 source 'https://rubygems.org'
 
@@ -32,7 +32,7 @@ Success: (/var/folders/zk/y7bt0p5x67gg39k56bc7ykx00000gn/T/temp20141125-31638-1t
 `*-wrapped` command accepts all existing options.
 
 ```
-$ ruby-unparse-wrapped Gemfile -v
+$ ruby-unparse-utility-wrapped Gemfile -v
 Original-Source:
 source 'https://rubygems.org'
 
