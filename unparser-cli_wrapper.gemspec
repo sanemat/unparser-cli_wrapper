@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Unparser::CliWrapper::VERSION
   spec.authors       = ['sanemat']
   spec.email         = ['o.gata.ken@gmail.com']
-  spec.summary       = 'TODO: Write a short summary. Required.'
-  spec.description   = 'TODO: Write a longer description. Optional.'
-  spec.homepage      = ''
+  spec.summary       = 'Enable stdin with ruby-unparse.'
+  spec.description   = 'Replace "-" with STDIN like unix option.'
+  spec.homepage      = 'https://github.com/sanemat/unparser-cli_wrapper'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
