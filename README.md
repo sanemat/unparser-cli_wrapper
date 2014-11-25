@@ -16,7 +16,7 @@ $ cat Gemfile | ruby-parse-wrapped -
 `*-wrapped` command accepts all existing options.
 
 ```
-$ ruby-parse-wrapped Gemfile
+$ ruby-unparse-wrapped Gemfile
 (begin
   (send nil :source
     (str "https://rubygems.org"))
@@ -31,11 +31,27 @@ source 'https://rubygems.org';
 
 gemspec
 
-$ ruby-parse Gemfile
+$ unparser Gemfile -v
+Original-Source:
+source 'https://rubygems.org'
+
+# Specify your gem's dependencies in unparser-cli_wrapper.gemspec
+gemspec
+
+          Original-AST:
 (begin
   (send nil :source
     (str "https://rubygems.org"))
   (send nil :gemspec))
+          Generated-Source:
+source("https://rubygems.org")
+gemspec
+          Generated-AST:
+(begin
+  (send nil :source
+    (str "https://rubygems.org"))
+  (send nil :gemspec))
+Success: (Gemfile)
 ```
 
 ## Installation
