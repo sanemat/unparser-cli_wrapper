@@ -5,6 +5,25 @@ trap('INT') do |status|
   exit! 128 + status
 end
 
+require 'tempfile'
 require 'unparser/cli'
 
-exit Unparser::CLI.run(ARGV)
+buff = []
+
+flag_stdin = ARGV.delete('-')
+
+if flag_stdin
+  while line = STDIN.gets
+    buff << line
+  end
+end
+
+if flag_stdin
+  Tempfile.open(['temp', '.rb']) { |file|
+    file.print(buff.join)
+    file.rewind
+    exit Unparser::CLI.run(ARGV + [file.path])
+  }
+else
+  exit Unparser::CLI.run(ARGV)
+end
