@@ -19,7 +19,7 @@ if flag_stdin
 end
 
 if flag_stdin
-  Tempfile.open(['temp', '.rb']) { |file|
+  Tempfile.open('temp') { |file|
     file.print(buff.join)
     file.rewind
     exit Unparser::CLI.run(ARGV + [file.path])
